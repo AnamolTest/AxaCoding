@@ -24,10 +24,12 @@ public class EmployeeServiceImpl implements EmployeeService{
     }
 
     public Employee getEmployee(Long employeeId) {
+    	System.out.print("DB Call");
         Optional<Employee> optEmp = employeeRepository.findById(employeeId);
         return optEmp.get();
     }
 
+   
     public void saveEmployee(Employee employee){
         employeeRepository.save(employee);
     }
