@@ -22,21 +22,7 @@ Application (with the embedded H2 database) is ready to be used ! You can access
 6. Custom Exception handler
 7. Junit Test Cases for all the APIs
 
-
-#### Restrictions
-- use java 8
-
-
-#### What we will look for
-- Readability of your code
-- Documentation
-- Comments in your code 
-- Appropriate usage of spring boot
-- Appropriate usage of packages
-- Is the application running as expected
-- No performance issues
-
-#### Your experience in Java
+#### experience in Java
 
 Please let us know more about your Java experience in a few sentences. For example:
 
