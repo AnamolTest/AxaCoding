@@ -12,17 +12,19 @@ import org.springframework.web.util.WebUtils;
 import io.jsonwebtoken.*;
 import jp.co.axa.apidemo.services.UserDetailsImpl;
 
+/* This utility class is used for the JWT operations
+*/ 
 @Component
 public class JwtUtils {
   private static final Logger logger = LoggerFactory.getLogger(JwtUtils.class);
 
-  @Value("${bezkoder.app.jwtSecret}")
+  @Value("${axa.app.jwtSecret}")
   private String jwtSecret;
 
-  @Value("${bezkoder.app.jwtExpirationMs}")
+  @Value("${axa.app.jwtExpirationMs}")
   private int jwtExpirationMs;
 
-  @Value("${bezkoder.app.jwtCookieName}")
+  @Value("${axa.app.jwtCookieName}")
   private String jwtCookie;
 
   public String getJwtFromCookies(HttpServletRequest request) {

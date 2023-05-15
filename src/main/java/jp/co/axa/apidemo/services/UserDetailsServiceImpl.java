@@ -10,7 +10,8 @@ import org.springframework.transaction.annotation.Transactional;
 import jp.co.axa.apidemo.entities.User;
 import jp.co.axa.apidemo.repositories.UserRepository;
 
-
+/* This service class is used for different User operation implementation
+*/ 
 
 @Service
 public class UserDetailsServiceImpl implements UserDetailsService {

@@ -18,7 +18,8 @@ import org.springframework.web.filter.OncePerRequestFilter;
 
 import jp.co.axa.apidemo.services.UserDetailsServiceImpl;
 
-
+/* This class is used for doing Authentication and sending back JWT token in cookies
+*/ 
 
 public class AuthTokenFilter extends OncePerRequestFilter {
   @Autowired

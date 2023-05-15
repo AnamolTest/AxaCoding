@@ -19,7 +19,8 @@ import jp.co.axa.apidemo.jwt.AuthEntryPointJwt;
 import jp.co.axa.apidemo.services.UserDetailsServiceImpl;
  	
 
- 
+/* This is main configuration class for the end point security this class has filter chain for the URL
+*/ 
 
 @Configuration
 @EnableWebSecurity
