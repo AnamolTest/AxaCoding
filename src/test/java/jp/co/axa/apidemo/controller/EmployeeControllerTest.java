@@ -34,7 +34,8 @@ import jp.co.axa.apidemo.services.EmployeeService;
 
  
 
-
+/* This test class is used to test all employee end point APIs
+*/ 
 
  
 @RunWith(SpringRunner.class)
