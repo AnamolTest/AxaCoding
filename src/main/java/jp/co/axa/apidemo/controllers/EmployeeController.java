@@ -1,7 +1,12 @@
 package jp.co.axa.apidemo.controllers;
 
 import jp.co.axa.apidemo.entities.Employee;
+import jp.co.axa.apidemo.exception.InvalidRequestException;
+import jp.co.axa.apidemo.jwt.AuthEntryPointJwt;
 import jp.co.axa.apidemo.services.EmployeeService;
+
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.cache.annotation.CachePut;
 import org.springframework.cache.annotation.Cacheable;
@@ -9,11 +14,14 @@ import org.springframework.cache.annotation.EnableCaching;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
+import java.util.Objects;
 
 @RestController
 @RequestMapping("/api/v1")
 @EnableCaching
 public class EmployeeController {
+	
+	  private static final Logger logger = LoggerFactory.getLogger(EmployeeController.class);
 
     @Autowired
     private EmployeeService employeeService;
@@ -34,11 +42,15 @@ public class EmployeeController {
     @GetMapping("/employees/{employeeId}")
     @ResponseBody
     public Employee getEmployee(@PathVariable(name="employeeId")Long employeeId) {
+    	
         return employeeService.getEmployee(employeeId);
     }
 
     @PostMapping("/employees")
     public Employee saveEmployee(@RequestBody Employee employee){
+    	if(Objects.isNull(employee.getName())||Objects.isNull(employee.getDepartment())||Objects.isNull(employee.getDepartment())) {
+    		throw new InvalidRequestException();
+    	}
       return  employeeService.saveEmployee(employee);
        
     }
@@ -46,7 +58,7 @@ public class EmployeeController {
     @DeleteMapping("/employees/{employeeId}")
     public void deleteEmployee(@PathVariable(name="employeeId")Long employeeId){
         employeeService.deleteEmployee(employeeId);
-        System.out.println("Employee Deleted Successfully");
+        logger.info("Employee Deleted Successfully");       
     }
 
     @CachePut(value="Employee")
