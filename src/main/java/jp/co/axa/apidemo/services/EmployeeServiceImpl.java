@@ -4,11 +4,12 @@ import jp.co.axa.apidemo.entities.Employee;
 import jp.co.axa.apidemo.repositories.EmployeeRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-
 import java.util.List;
 import java.util.Optional;
+import javax.transaction.Transactional;
 
 @Service
+@Transactional
 public class EmployeeServiceImpl implements EmployeeService{
 
     @Autowired
@@ -24,14 +25,14 @@ public class EmployeeServiceImpl implements EmployeeService{
     }
 
     public Employee getEmployee(Long employeeId) {
-    	System.out.print("DB Call");
+    	//System.out.print("DB Call");
         Optional<Employee> optEmp = employeeRepository.findById(employeeId);
         return optEmp.get();
     }
 
    
-    public void saveEmployee(Employee employee){
-        employeeRepository.save(employee);
+    public Employee saveEmployee(Employee employee){
+       return  employeeRepository.save(employee);
     }
 
     public void deleteEmployee(Long employeeId){

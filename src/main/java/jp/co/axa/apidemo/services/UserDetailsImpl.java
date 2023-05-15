@@ -7,14 +7,18 @@ import java.util.stream.Collectors;
 
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;
-import org.springframework.security.core.userdetails.UserDetails; 
+import org.springframework.security.core.userdetails.UserDetails;
+import org.springframework.stereotype.Service;
+
 import com.fasterxml.jackson.annotation.JsonIgnore;
 
 import jp.co.axa.apidemo.entities.User;
 
+
 public class UserDetailsImpl implements UserDetails {
   private static final long serialVersionUID = 1L;
 
+ 
   private Long id;
 
   private String username;

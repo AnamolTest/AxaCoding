@@ -23,7 +23,26 @@ public class Employee {
     private Long id;
 
    
-    @Column(name="EMPLOYEE_NAME")
+	/*
+	 * public Employee(Long id,String name, Integer salary, String department) {
+	 * 
+	 * this.id=id; this.name = name; this.salary = salary; this.department =
+	 * department; }
+	 */
+    
+    public Employee(Long id,String name, Integer salary, String department) {
+    	this.id=id;
+		this.name = name;
+		this.salary = salary;
+		this.department = department;
+	}
+    
+    public Employee() {
+    	
+    }
+
+
+	@Column(name="EMPLOYEE_NAME")
     private String name;
 
    

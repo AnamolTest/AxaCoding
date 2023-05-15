@@ -18,10 +18,12 @@ public class EmployeeController {
     @Autowired
     private EmployeeService employeeService;
 
+    
     public void setEmployeeService(EmployeeService employeeService) {
         this.employeeService = employeeService;
     }
 
+    @Cacheable(value="List<Employee>")
     @GetMapping("/employees")
     public List<Employee> getEmployees() {
         List<Employee> employees = employeeService.retrieveEmployees();
@@ -36,9 +38,9 @@ public class EmployeeController {
     }
 
     @PostMapping("/employees")
-    public void saveEmployee(@RequestBody Employee employee){
-        employeeService.saveEmployee(employee);
-        System.out.println("Employee Saved Successfully");
+    public Employee saveEmployee(@RequestBody Employee employee){
+      return  employeeService.saveEmployee(employee);
+       
     }
 
     @DeleteMapping("/employees/{employeeId}")
