@@ -12,23 +12,16 @@ Application (with the embedded H2 database) is ready to be used ! You can access
 
 
 
-### Instructions
+### Enhancements
 
-- download the zip file of this project
-- create a repository in your own github named 'java-challenge'
-- clone your repository in a folder on your machine
-- extract the zip file in this folder
-- commit and push
+1. Endpoint Security and JWT implemnetation
+2. Fixed existing bug like @RequestBody annotation was missing in the save employee request and update employee API was not working correctly
+3. Added Caching
+4. Added Logging
+5. Added Exception handling for Invalid Request Exception
+6. Custom Exception handler
+7. Junit Test Cases for all the APIs
 
-- Enhance the code in any ways you can see, you are free! Some possibilities:
-  - Add tests
-  - Change syntax
-  - Protect controller end points
-  - Add caching logic for database calls
-  - Improve doc and comments
-  - Fix any bug you might find
-- Edit readme.md and add any comments. It can be about what you did, what you would have done if you had more time, etc.
-- Send us the link of your repository.
 
 #### Restrictions
 - use java 8
@@ -47,6 +40,10 @@ Application (with the embedded H2 database) is ready to be used ! You can access
 
 Please let us know more about your Java experience in a few sentences. For example:
 
-- I have 3 years experience in Java and I started to use Spring Boot from last year
-- I'm a beginner and just recently learned Spring Boot
-- I know Spring Boot very well and have been using it for many years
+- I have 6 years experience in Java and I started to use Spring Boot from last 5 years.
+- I have good experience in Core Java, Servlet, JSP, JDBC, MVC Architecture, Spring boot, Spring Framework and Spring boot Microservice Architecture.
+- I know Spring Boot very well and have been using it for many years.
+- I have understanding of containerization, experience in Dockers and Kubernetes.
+- I have experience in Apache Kafka.
+- I have experience in working Database technologies like SQL server.
+- I have experience in development and unit testing of the application.
